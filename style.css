@@ -12,115 +12,37 @@
 
 body{
     font-family: 'Barlow Semi Condensed', sans-serif;
-    background-color: var(--Lightgray);
-    display: flex;
-    justify-content: center;
+    background-color: var(--Lightgrayish-blue);
+    display: block;
     padding-top: 75px;
     margin: 0 auto;
 }
 
 
-@media(max-width: 700px){
-    .testimonials-grid{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 350px;
-        height: auto;
-    }
-
-    .separador-derecha{
-        align-items: center;
-        justify-content: start;
-        
-    }
-
-    .separador-izquierda{
-        align-items: center;
-        width: 350px;
-    }
-
-    .testimonials-top{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        height: 550px;
-
-    }
-
-    .testimonials-bottom{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        height: 520px;
-     
-    }
-    
-    div.card-1{
-        width: 200px;
-    }
-    div.card-2{
-        width: 200px;
-    }
-    div.card-3{
-        width: 200px;
-    }
-    div.card-4{
-        width: 200px;
-    }
-    div.card-5{
-        width: 200px;
-    }
-
-}
-
-
 /* Teestimonial grid section */
 .testimonials-grid{
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    grid-gap: 16px;
+    width: 65%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "testimonial1  testimonial1 testimonial2 testimonial5"
+    "testimonial3 testimonial4 testimonial4 testimonial5";
+    grid-gap: 25px;
     border-radius: 10px;
     overflow: visible;
     margin: 0 auto;
 }
 
-.separador-izquierda{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around ;
-    width: 70%;
-    height: 450px;
-}
-
-.separador-derecha{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 180px;
-}
-
-.testimonials-top{
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.testimonials-bottom{
-    display: flex;
-    justify-content: space-evenly;
-}
 
 
 .card-1{
-    border-radius: 5px;
+    border-radius: 10px;
     background: var(--moderate-violet) url(./images/bg-pattern-quotation.svg) no-repeat;
-    background-position: right 60px top;
-    width: 380px;
+    background-position: right 10px top;
     color: var(--white);
-    padding: 20px;
+    padding: 25px;
+    grid-area: testimonial1;
 }
 
 
@@ -128,38 +50,37 @@ body{
 .card-2{
     font-size: 12px;
     background-color: var(--very-dark-grayish-blue);
-    width: 170px;
-    padding: 20px;
+    padding: 25px;
     color: var(--white);
-    border-radius: 5px;
+    border-radius: 10px;
+    grid-area: testimonial2;
 }
 
 .card-3{
     font-size: 12px;
-    background-color: var(--Lightgrayish-blue);
-    width: 150px;
-    padding: 20px;
-    border-radius: 5px;
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 10px;
     color: var(--very-dark-grayish-blue);
-
+    grid-area: testimonial3;
 }
 
 .card-4{
     font-size: 12px;
-    width: 400px;
-    padding: 20px;
+    padding: 25px;
     color: var(--white);
     background-color:var(--verydarkblackish-blue);
-    border-radius: 5px;
-
+    border-radius: 10px;
+    grid-area: testimonial4;
 }
 
 .card-5{
     font-size: 12px;
-    background-color: var(--Lightgrayish-blue);
-    padding: 20px; 
-    border-radius: 5px;
+    background-color: var(--white);
+    padding: 25px; 
+    border-radius: 10px;
     color: var(--very-dark-grayish-blue);
+    grid-area: testimonial5;
 }
 
 .about{
@@ -209,3 +130,11 @@ p{
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+@media(max-width: 700px){
+    .testimonials-grid{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 250px;
+    }
+}
